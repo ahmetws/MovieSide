@@ -38,7 +38,8 @@ class NowPlayingViewControllerTests: XCTestCase {
     //MARK: - Helpers
     
     private func makeSUT(_ movies: [String] = []) -> NowPlayingViewController {
-        let sut = NowPlayingViewController(movies: movies)
+        let viewModel = NowPlayingViewModel(movies: movies)
+        let sut = NowPlayingViewController(viewModel: viewModel)
         _ = sut.view
         return sut
     }

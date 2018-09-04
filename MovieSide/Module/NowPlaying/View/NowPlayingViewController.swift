@@ -12,11 +12,11 @@ class NowPlayingViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var movies: [String] = []
+    var viewModel: NowPlayingViewModel!
 
-    convenience init(movies: [String]) {
+    convenience init(viewModel: NowPlayingViewModel) {
         self.init()
-        self.movies = movies
+        self.viewModel = viewModel
     }
     
     //MARK: Life Cycle
@@ -31,7 +31,7 @@ class NowPlayingViewController: UIViewController {
     //MARK: UI
 
     private func prepareUI() {
-        title = "Now Playing"
+        title = viewModel.getTitle()
     }
     
     //MARK: Data
@@ -44,7 +44,7 @@ class NowPlayingViewController: UIViewController {
 extension NowPlayingViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movies.count
+        return viewModel.numberOfItems()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
