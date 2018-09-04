@@ -10,6 +10,9 @@
 		4BD06246213F167F00A6DC60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD06245213F167F00A6DC60 /* AppDelegate.swift */; };
 		4BD0624D213F168100A6DC60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD0624C213F168100A6DC60 /* Assets.xcassets */; };
 		4BD06250213F168100A6DC60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD0624E213F168100A6DC60 /* LaunchScreen.storyboard */; };
+		4BD0626D213F186400A6DC60 /* NowPlayingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0626C213F186400A6DC60 /* NowPlayingViewControllerTests.swift */; };
+		4BD06272213F18DB00A6DC60 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD06270213F18DB00A6DC60 /* NowPlayingViewController.swift */; };
+		4BD06273213F18DB00A6DC60 /* NowPlayingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD06271213F18DB00A6DC60 /* NowPlayingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +33,9 @@
 		4BD06251213F168100A6DC60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BD06256213F168100A6DC60 /* MovieSideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieSideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD0625C213F168100A6DC60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BD0626C213F186400A6DC60 /* NowPlayingViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewControllerTests.swift; sourceTree = "<group>"; };
+		4BD06270213F18DB00A6DC60 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
+		4BD06271213F18DB00A6DC60 /* NowPlayingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NowPlayingViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,7 @@
 		4BD06259213F168100A6DC60 /* MovieSideTests */ = {
 			isa = PBXGroup;
 			children = (
+				4BD06269213F182000A6DC60 /* Module */,
 				4BD0625C213F168100A6DC60 /* Info.plist */,
 			);
 			path = MovieSideTests;
@@ -99,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				4BD06267213F16A400A6DC60 /* AppDelegate */,
+				4BD0626E213F18C000A6DC60 /* NowPlaying */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -109,6 +117,47 @@
 				4BD06245213F167F00A6DC60 /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		4BD06269213F182000A6DC60 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				4BD0626A213F183600A6DC60 /* NowPlaying */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		4BD0626A213F183600A6DC60 /* NowPlaying */ = {
+			isa = PBXGroup;
+			children = (
+				4BD0626B213F184400A6DC60 /* View */,
+			);
+			path = NowPlaying;
+			sourceTree = "<group>";
+		};
+		4BD0626B213F184400A6DC60 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4BD0626C213F186400A6DC60 /* NowPlayingViewControllerTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4BD0626E213F18C000A6DC60 /* NowPlaying */ = {
+			isa = PBXGroup;
+			children = (
+				4BD0626F213F18C900A6DC60 /* View */,
+			);
+			path = NowPlaying;
+			sourceTree = "<group>";
+		};
+		4BD0626F213F18C900A6DC60 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4BD06270213F18DB00A6DC60 /* NowPlayingViewController.swift */,
+				4BD06271213F18DB00A6DC60 /* NowPlayingViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +213,7 @@
 					};
 					4BD06255213F168100A6DC60 = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 0930;
 						TestTargetID = 4BD06241213F167F00A6DC60;
 					};
 				};
@@ -194,6 +244,7 @@
 			files = (
 				4BD06250213F168100A6DC60 /* LaunchScreen.storyboard in Resources */,
 				4BD0624D213F168100A6DC60 /* Assets.xcassets in Resources */,
+				4BD06273213F18DB00A6DC60 /* NowPlayingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BD06272213F18DB00A6DC60 /* NowPlayingViewController.swift in Sources */,
 				4BD06246213F167F00A6DC60 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BD0626D213F186400A6DC60 /* NowPlayingViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +454,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4GA7VHNLUN;
 				INFOPLIST_FILE = MovieSideTests/Info.plist;
@@ -411,6 +465,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.appside.MovieSideTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MovieSide.app/MovieSide";
@@ -422,6 +477,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4GA7VHNLUN;
 				INFOPLIST_FILE = MovieSideTests/Info.plist;
