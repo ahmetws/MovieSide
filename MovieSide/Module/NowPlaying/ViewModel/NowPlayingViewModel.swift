@@ -23,4 +23,8 @@ class NowPlayingViewModel {
     func numberOfItems() -> Int {
         return movies.count
     }
+    
+    func titleForCell(at indexPath: IndexPath) -> String {
+        return movies[indexPath.row]
+    }
 }

@@ -30,9 +30,10 @@ class NowPlayingViewControllerTests: XCTestCase {
     }
     
     func test_collectionView_rendersCellForMovies() {
-        let sut = makeSUT(["Spider Man"])
-        let cell = sut.collectionView(sut.collectionView, cellForItemAt: IndexPath(item: 0, section: 0))
-        XCTAssertNotNil(cell)
+        let movies = ["Spider Man", "Hulk", "Now You See Me"]
+        XCTAssertEqual(makeSUT(movies).collectionView.title(at: 0), movies[0])
+        XCTAssertEqual(makeSUT(movies).collectionView.title(at: 1), movies[1])
+        XCTAssertEqual(makeSUT(movies).collectionView.title(at: 2), movies[2])
     }
     
     //MARK: - Helpers
@@ -48,5 +49,14 @@ class NowPlayingViewControllerTests: XCTestCase {
 private extension UICollectionView {
     func numberOfItems() -> Int {
         return numberOfItems(inSection: 0)
+    }
+    
+    func cell(at row: Int) -> UICollectionViewCell? {
+        return dataSource?.collectionView(self, cellForItemAt: IndexPath(item: row, section: 0))
+    }
+    
+    func title(at row: Int) -> String? {
+        let movieCell = cell(at: row) as! MovieCell
+        return movieCell.titleLabel.text
     }
 }

@@ -38,6 +38,8 @@ class NowPlayingViewController: UIViewController {
     
     private func configureData() {
         
+        collectionView.register(UINib(nibName: MovieCell.identifier, bundle: nil), forCellWithReuseIdentifier: MovieCell.identifier)
+        
     }
 }
 
@@ -48,7 +50,9 @@ extension NowPlayingViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCell.identifier, for: indexPath) as! MovieCell
+        cell.titleLabel.text = viewModel.titleForCell(at: indexPath)
+        return cell
     }
     
 }
