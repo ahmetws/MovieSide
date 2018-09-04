@@ -8,11 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4BD06246213F167F00A6DC60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD06245213F167F00A6DC60 /* AppDelegate.swift */; };
-		4BD06248213F167F00A6DC60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD06247213F167F00A6DC60 /* ViewController.swift */; };
-		4BD0624B213F167F00A6DC60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD06249213F167F00A6DC60 /* Main.storyboard */; };
 		4BD0624D213F168100A6DC60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD0624C213F168100A6DC60 /* Assets.xcassets */; };
 		4BD06250213F168100A6DC60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD0624E213F168100A6DC60 /* LaunchScreen.storyboard */; };
-		4BD0625B213F168100A6DC60 /* MovieSideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0625A213F168100A6DC60 /* MovieSideTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,13 +25,10 @@
 /* Begin PBXFileReference section */
 		4BD06242213F167F00A6DC60 /* MovieSide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieSide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD06245213F167F00A6DC60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4BD06247213F167F00A6DC60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4BD0624A213F167F00A6DC60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4BD0624C213F168100A6DC60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BD0624F213F168100A6DC60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BD06251213F168100A6DC60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BD06256213F168100A6DC60 /* MovieSideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieSideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BD0625A213F168100A6DC60 /* MovieSideTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSideTests.swift; sourceTree = "<group>"; };
 		4BD0625C213F168100A6DC60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,12 +71,8 @@
 		4BD06244213F167F00A6DC60 /* MovieSide */ = {
 			isa = PBXGroup;
 			children = (
-				4BD06245213F167F00A6DC60 /* AppDelegate.swift */,
-				4BD06247213F167F00A6DC60 /* ViewController.swift */,
-				4BD06249213F167F00A6DC60 /* Main.storyboard */,
-				4BD0624C213F168100A6DC60 /* Assets.xcassets */,
-				4BD0624E213F168100A6DC60 /* LaunchScreen.storyboard */,
-				4BD06251213F168100A6DC60 /* Info.plist */,
+				4BD06266213F169C00A6DC60 /* Module */,
+				4BD06265213F168E00A6DC60 /* Resource */,
 			);
 			path = MovieSide;
 			sourceTree = "<group>";
@@ -90,10 +80,35 @@
 		4BD06259213F168100A6DC60 /* MovieSideTests */ = {
 			isa = PBXGroup;
 			children = (
-				4BD0625A213F168100A6DC60 /* MovieSideTests.swift */,
 				4BD0625C213F168100A6DC60 /* Info.plist */,
 			);
 			path = MovieSideTests;
+			sourceTree = "<group>";
+		};
+		4BD06265213F168E00A6DC60 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4BD0624C213F168100A6DC60 /* Assets.xcassets */,
+				4BD0624E213F168100A6DC60 /* LaunchScreen.storyboard */,
+				4BD06251213F168100A6DC60 /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		4BD06266213F169C00A6DC60 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				4BD06267213F16A400A6DC60 /* AppDelegate */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		4BD06267213F16A400A6DC60 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				4BD06245213F167F00A6DC60 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +194,6 @@
 			files = (
 				4BD06250213F168100A6DC60 /* LaunchScreen.storyboard in Resources */,
 				4BD0624D213F168100A6DC60 /* Assets.xcassets in Resources */,
-				4BD0624B213F167F00A6DC60 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +211,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BD06248213F167F00A6DC60 /* ViewController.swift in Sources */,
 				4BD06246213F167F00A6DC60 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,7 +219,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BD0625B213F168100A6DC60 /* MovieSideTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,14 +233,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4BD06249213F167F00A6DC60 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4BD0624A213F167F00A6DC60 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4BD0624E213F168100A6DC60 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,7 +295,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -345,7 +349,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -360,7 +364,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4GA7VHNLUN;
-				INFOPLIST_FILE = MovieSide/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MovieSide/Resource/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,7 +383,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4GA7VHNLUN;
-				INFOPLIST_FILE = MovieSide/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MovieSide/Resource/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
