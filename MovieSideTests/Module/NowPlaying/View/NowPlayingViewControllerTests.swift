@@ -45,6 +45,7 @@ class NowPlayingViewControllerTests: XCTestCase {
         
         let sut = NowPlayingViewController(viewModel: viewModel)
         _ = sut.view
+        sut.reloadData()
         return sut
     }
 }

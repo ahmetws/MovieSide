@@ -44,7 +44,7 @@ class NowPlayingViewController: UIViewController {
         collectionView.register(MovieCell.self)
     }
     
-    private func reloadData() {
+    func reloadData() {
         dataSource = viewModel.getDataSource { [weak self] (movie) in
             self?.didSelect(movie: movie)
         }
@@ -52,10 +52,6 @@ class NowPlayingViewController: UIViewController {
         collectionView.dataSource = dataSource
         collectionView.delegate = dataSource
         collectionView.reloadData()
-    }
-    
-    private func didSelect(movie: Movie) {
-        delegate.showDetails(of: movie, from: self)
     }
     
     //MARK: Data
@@ -66,5 +62,11 @@ class NowPlayingViewController: UIViewController {
                 self?.reloadData()
             }
         }
+    }
+    
+    //MARK: Selection
+
+    private func didSelect(movie: Movie) {
+        delegate.showDetails(of: movie, from: self)
     }
 }
