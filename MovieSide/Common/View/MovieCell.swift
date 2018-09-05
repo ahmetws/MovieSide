@@ -21,6 +21,6 @@ class MovieCell: UICollectionViewCell {
     
     func setup(with movie: Movie) {
         titleLabel.text = movie.title
-        posterImageView.setImage(with: movie.posterUrl())
+        posterImageView.setImage(with: movie.getPosterUrl())
     }
 }

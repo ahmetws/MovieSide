@@ -10,13 +10,9 @@ import Foundation
 @testable import MovieSide
 
 class MockAPIClient: MovieAPIProtocol {
-    
+
     var apiEngine: APIEngineProtocol
     var movies = [Movie]()
-
-    func getNowPlaying(completion: @escaping MovieAPIProtocol.MoviesCompletionHandler) {
-        completion(movies, nil)
-    }
     
     init(movies: [Movie], apiEngine: APIEngineProtocol = APIEngine()) {
         self.movies = movies
@@ -25,5 +21,13 @@ class MockAPIClient: MovieAPIProtocol {
     
     func getNowPlaying(completion: ([Movie]) -> Void) {
         completion(movies)
+    }
+    
+    func getNowPlaying(completion: @escaping MovieAPIProtocol.NowPlayingMoviesCompletionHandler) {
+        completion(movies, nil)
+    }
+    
+    func getDetails(for movie: Movie, completion: @escaping MovieAPIProtocol.MovieDetailsCompletionHandler) {
+        
     }
 }

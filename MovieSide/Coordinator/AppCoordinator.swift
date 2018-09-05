@@ -40,6 +40,8 @@ class AppCoordinator: AppCoordinatorProtocol {
 extension AppCoordinator: NowPlayingViewControllerDelegate {
     
     func showDetails(of movie: Movie, from viewController: UIViewController) {
-        viewController.show(UIViewController(), sender: nil)
+        let viewModel = MovieDetailsViewModel(apiClient: apiClient, movie: movie)
+        let movieDetailController = MovieDetailsViewController(viewModel: viewModel)
+        viewController.show(movieDetailController, sender: nil)
     }
 }

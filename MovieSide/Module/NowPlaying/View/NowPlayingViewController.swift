@@ -37,7 +37,8 @@ class NowPlayingViewController: UIViewController {
 
     private func prepareUI() {
         title = viewModel.getTitle()
-        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+
         collectionView.register(MovieCell.self)
     }
     

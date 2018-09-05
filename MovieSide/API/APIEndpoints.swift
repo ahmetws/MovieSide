@@ -8,10 +8,25 @@
 
 import Foundation
 
-enum APIEndPoints: String {
-    case nowPlaying = "movie/now_playing"
+enum APIEndPoints {
+    case nowPlaying
+    case movieDetails(movie: Movie)
+
+    func endPoint() -> String {
+        switch self {
+        case .nowPlaying:
+            return "movie/now_playing"
+        case .movieDetails(let movie):
+            return "movie/\(movie.movieId)"
+        }
+    }
     
     func buildUrl() -> String {
-        return "\(AppConstants.API.BaseURL)\(AppConstants.API.BaseAPIVersion)/\(self.rawValue)?api_key=\(AppConstants.API.TheMovieDBAPIKey)"
+        switch self {
+        case .nowPlaying:
+            return "\(AppConstants.API.BaseURL)\(AppConstants.API.BaseAPIVersion)/\(endPoint())?api_key=\(AppConstants.API.TheMovieDBAPIKey)"
+        case .movieDetails:
+            return "\(AppConstants.API.BaseURL)\(AppConstants.API.BaseAPIVersion)/\(endPoint())?api_key=\(AppConstants.API.TheMovieDBAPIKey)"
+        }
     }
 }
