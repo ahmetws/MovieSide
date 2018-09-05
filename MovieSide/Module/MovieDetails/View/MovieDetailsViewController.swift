@@ -10,6 +10,8 @@ import UIKit
 
 class MovieDetailsViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+
     var viewModel: MovieDetailsViewModel!
 
     convenience init(viewModel: MovieDetailsViewModel) {
@@ -30,6 +32,12 @@ class MovieDetailsViewController: UIViewController {
     
     private func prepareUI() {
         title = viewModel.getTitle()
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
+        tableView.tableFooterView = UIView()
+        
+        tableView.register(MovieHeaderCell.self)
     }
     
     private func updateMovieDetails() {
@@ -45,4 +53,25 @@ class MovieDetailsViewController: UIViewController {
             }
         }
     }
+}
+
+extension MovieDetailsViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfRows()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let rowType: MovieDetailsViewModel.MovieDetailsRowType = viewModel.rowType(for: indexPath)
+        
+        switch rowType {
+        case .header(let movie):
+            let cell = tableView.dequeueReusableCell(withIdentifier: MovieHeaderCell.identifier) as! MovieHeaderCell
+            cell.setup(with: movie)
+            return cell
+        case .collection:
+            return UITableViewCell()
+        }
+    }
+    
 }

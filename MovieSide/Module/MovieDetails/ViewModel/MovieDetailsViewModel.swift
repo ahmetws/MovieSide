@@ -10,17 +10,33 @@ import Foundation
 
 class MovieDetailsViewModel {
     
+    enum MovieDetailsRowType {
+        case header(movie: Movie)
+        case collection
+    }
+    
     private var apiClient: MovieAPIProtocol!
     private var currentMovie: Movie!
     private var movieDetails: MovieDetail!
 
+    var rows: [MovieDetailsRowType]
+    
     init(apiClient: MovieAPIProtocol, movie: Movie) {
         self.apiClient = apiClient
         self.currentMovie = movie
+        rows = [.header(movie: movie)]
     }
     
     func getTitle() -> String {
         return "Movie Detail"
+    }
+    
+    func numberOfRows() -> Int {
+        return rows.count
+    }
+    
+    func rowType(for indexPath: IndexPath) -> MovieDetailsRowType {
+        return rows[indexPath.row]
     }
     
     func getMovieDetails(completion: @escaping () -> Void) {

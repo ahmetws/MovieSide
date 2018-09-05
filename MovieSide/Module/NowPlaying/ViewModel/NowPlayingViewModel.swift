@@ -17,6 +17,10 @@ class NowPlayingViewModel {
         self.apiClient = apiClient
     }
     
+    func getDataSource(didSelectItemHandler: @escaping MoviesDataSource.MovieSelectHandler) -> MoviesDataSource {
+        return MoviesDataSource(with: movies, didSelectItemHandler: didSelectItemHandler)
+    }
+    
     func getMovies(completion: @escaping () -> Void) {
         apiClient.getNowPlaying { [weak self] (movieList, error) in
             if error == nil {
