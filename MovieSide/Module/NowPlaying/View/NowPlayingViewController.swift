@@ -25,21 +25,14 @@ class NowPlayingViewController: UIViewController {
         super.viewDidLoad()
         
         prepareUI()
-        configureData()
     }
     
     //MARK: UI
 
     private func prepareUI() {
         title = viewModel.getTitle()
-    }
-    
-    //MARK: Data
-    
-    private func configureData() {
         
-        collectionView.register(UINib(nibName: MovieCell.identifier, bundle: nil), forCellWithReuseIdentifier: MovieCell.identifier)
-        
+        collectionView.register(MovieCell.self)
     }
 }
 

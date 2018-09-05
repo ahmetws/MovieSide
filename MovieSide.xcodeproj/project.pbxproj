@@ -18,6 +18,7 @@
 		4BD06282213F22DA00A6DC60 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD06280213F22DA00A6DC60 /* MovieCell.swift */; };
 		4BD06283213F22DA00A6DC60 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD06281213F22DA00A6DC60 /* MovieCell.xib */; };
 		4BD06286213F257000A6DC60 /* UICollectionViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD06285213F257000A6DC60 /* UICollectionViewCellExtensions.swift */; };
+		4BD06288213FC3BA00A6DC60 /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD06287213FC3B900A6DC60 /* UICollectionViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		4BD06280213F22DA00A6DC60 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		4BD06281213F22DA00A6DC60 /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
 		4BD06285213F257000A6DC60 /* UICollectionViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtensions.swift; sourceTree = "<group>"; };
+		4BD06287213FC3B900A6DC60 /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				4BD06285213F257000A6DC60 /* UICollectionViewCellExtensions.swift */,
+				4BD06287213FC3B900A6DC60 /* UICollectionViewExtensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				4BD06246213F167F00A6DC60 /* AppDelegate.swift in Sources */,
 				4BD06282213F22DA00A6DC60 /* MovieCell.swift in Sources */,
 				4BD06279213F209700A6DC60 /* NowPlayingViewModel.swift in Sources */,
+				4BD06288213FC3BA00A6DC60 /* UICollectionViewExtensions.swift in Sources */,
 				4BD06286213F257000A6DC60 /* UICollectionViewCellExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
