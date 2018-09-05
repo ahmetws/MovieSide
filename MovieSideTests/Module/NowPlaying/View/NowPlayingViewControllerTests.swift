@@ -39,7 +39,9 @@ class NowPlayingViewControllerTests: XCTestCase {
     //MARK: - Helpers
     
     private func makeSUT(_ movies: [String] = []) -> NowPlayingViewController {
-        let viewModel = NowPlayingViewModel(movies: movies)
+        let apiClient = MockAPIClient(movies: movies)
+        let viewModel = NowPlayingViewModel(apiClient: apiClient)
+        viewModel.getData()
         let sut = NowPlayingViewController(viewModel: viewModel)
         _ = sut.view
         return sut

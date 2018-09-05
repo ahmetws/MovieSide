@@ -10,10 +10,17 @@ import Foundation
 
 class NowPlayingViewModel {
     
+    var apiClient: MovieAPIProtocol!
     var movies: [String] = []
     
-    init(movies: [String]) {
-        self.movies = movies
+    init(apiClient: MovieAPIProtocol) {
+        self.apiClient = apiClient
+    }
+    
+    func getData() {
+        apiClient.getNowPlaying { [weak self] (movieList) in
+            self?.movies = movieList
+        }
     }
     
     func getTitle() -> String {
