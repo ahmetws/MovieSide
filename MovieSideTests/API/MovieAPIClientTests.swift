@@ -13,9 +13,9 @@ class MovieAPIClientTests: XCTestCase {
     
     func test_completionCall() {
         var completionCalled = true
-        let sut = MovieAPIClient()
+        let sut = MovieAPIClient(apiEngine: APIEngine())
         
-        sut.getNowPlaying { (movies) in
+        sut.getNowPlaying { (_,_) in
             completionCalled = true
         }
         

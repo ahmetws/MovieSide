@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        let apiClient = MovieAPIClient()
+        let apiClient = MovieAPIClient(apiEngine: APIEngine())
         let viewModel = NowPlayingViewModel(apiClient: apiClient)
         let viewController = NowPlayingViewController(viewModel: viewModel)
         let navigationController = UINavigationController(rootViewController: viewController)

@@ -17,8 +17,8 @@ class NowPlayingViewModelTests: XCTestCase {
     
     func test_viewModel_rendersNumberOfItems() {
         XCTAssertEqual(makeSUT().numberOfItems(), 0)
-        XCTAssertEqual(makeSUT(["Spider Man"]).numberOfItems(), 1)
-        XCTAssertEqual(makeSUT(["Spider Man", "Hulk"]).numberOfItems(), 2)
+        XCTAssertEqual(makeSUT([Movie("Spider Man")]).numberOfItems(), 1)
+        XCTAssertEqual(makeSUT([Movie("Spider Man"), Movie("Hulk")]).numberOfItems(), 2)
 
     }
     
@@ -30,10 +30,10 @@ class NowPlayingViewModelTests: XCTestCase {
     
     //MARK: - Helpers
     
-    private func makeSUT(_ movies: [String] = []) -> NowPlayingViewModel {
+    private func makeSUT(_ movies: [Movie] = []) -> NowPlayingViewModel {
         let apiClient = MockAPIClient(movies: movies)
         let sut = NowPlayingViewModel(apiClient: apiClient)
-        sut.getData()
+        sut.movies = movies
         return sut
     }
 }

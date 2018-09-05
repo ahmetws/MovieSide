@@ -24,24 +24,25 @@ class NowPlayingViewControllerTests: XCTestCase {
     }
     
     func test_collectionView_rendersMovies() {
-        XCTAssertEqual(makeSUT(["Spider Man"]).collectionView.numberOfItems(), 1)
-        XCTAssertEqual(makeSUT(["Spider Man", "Hulk"]).collectionView.numberOfItems(), 2)
-        XCTAssertEqual(makeSUT(["Spider Man", "Hulk", "Now You See Me"]).collectionView.numberOfItems(), 3)
+        XCTAssertEqual(makeSUT([Movie("Spider Man")]).collectionView.numberOfItems(), 1)
+        XCTAssertEqual(makeSUT([Movie("Spider Man"), Movie("Hulk")]).collectionView.numberOfItems(), 2)
+        XCTAssertEqual(makeSUT([Movie("Spider Man"), Movie("Hulk"), Movie("Now You See Me")]).collectionView.numberOfItems(), 3)
     }
     
     func test_collectionView_rendersCellForMovies() {
-        let movies = ["Spider Man", "Hulk", "Now You See Me"]
-        XCTAssertEqual(makeSUT(movies).collectionView.title(at: 0), movies[0])
-        XCTAssertEqual(makeSUT(movies).collectionView.title(at: 1), movies[1])
-        XCTAssertEqual(makeSUT(movies).collectionView.title(at: 2), movies[2])
+        let movies = [Movie("Spider Man"), Movie("Hulk"), Movie("Now You See Me")]
+        XCTAssertEqual(makeSUT(movies).collectionView.title(at: 0), movies[0].title)
+        XCTAssertEqual(makeSUT(movies).collectionView.title(at: 1), movies[1].title)
+        XCTAssertEqual(makeSUT(movies).collectionView.title(at: 2), movies[2].title)
     }
     
     //MARK: - Helpers
     
-    private func makeSUT(_ movies: [String] = []) -> NowPlayingViewController {
+    private func makeSUT(_ movies: [Movie] = []) -> NowPlayingViewController {
         let apiClient = MockAPIClient(movies: movies)
         let viewModel = NowPlayingViewModel(apiClient: apiClient)
-        viewModel.getData()
+        viewModel.movies = movies
+        
         let sut = NowPlayingViewController(viewModel: viewModel)
         _ = sut.view
         return sut

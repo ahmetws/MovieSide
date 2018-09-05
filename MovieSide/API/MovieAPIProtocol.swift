@@ -9,7 +9,9 @@
 import Foundation
 
 protocol MovieAPIProtocol {
-    typealias MoviesCompletionHandler = ([String]) -> Void
+    typealias MoviesCompletionHandler = ([Movie], Error?) -> Void
     
-    func getNowPlaying(completion: MoviesCompletionHandler)
+    var apiEngine: APIEngineProtocol { get set }
+
+    func getNowPlaying(completion: @escaping MoviesCompletionHandler)
 }

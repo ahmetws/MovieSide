@@ -11,15 +11,18 @@ import Foundation
 class NowPlayingViewModel {
     
     var apiClient: MovieAPIProtocol!
-    var movies: [String] = []
+    var movies: [Movie] = []
     
     init(apiClient: MovieAPIProtocol) {
         self.apiClient = apiClient
     }
     
-    func getData() {
-        apiClient.getNowPlaying { [weak self] (movieList) in
-            self?.movies = movieList
+    func getMovies(completion: @escaping () -> Void) {
+        apiClient.getNowPlaying { [weak self] (movieList, error) in
+            if error == nil {
+                self?.movies = movieList
+            }
+            completion()
         }
     }
     
@@ -32,6 +35,6 @@ class NowPlayingViewModel {
     }
     
     func titleForCell(at indexPath: IndexPath) -> String {
-        return movies[indexPath.row]
+        return movies[indexPath.row].title
     }
 }

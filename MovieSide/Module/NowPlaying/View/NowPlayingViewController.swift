@@ -25,6 +25,7 @@ class NowPlayingViewController: UIViewController {
         super.viewDidLoad()
         
         prepareUI()
+        getMovies()
     }
     
     //MARK: UI
@@ -34,6 +35,22 @@ class NowPlayingViewController: UIViewController {
         
         collectionView.register(MovieCell.self)
     }
+    
+    private func reloadData() {
+        collectionView.reloadData()
+    }
+    
+    //MARK: Data
+
+    private func getMovies() {
+        viewModel.getMovies { [weak self] in
+            DispatchQueue.main.async {
+                self?.reloadData()
+            }
+        }
+    }
+    
+    
 }
 
 extension NowPlayingViewController: UICollectionViewDataSource {
