@@ -32,6 +32,7 @@
                     </collectionViewFlowLayout>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="ITU-g0-U35"/>
+                        <outlet property="delegate" destination="-1" id="6XL-16-p7e"/>
                     </connections>
                 </collectionView>
             </subviews>

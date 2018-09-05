@@ -49,11 +49,9 @@ class NowPlayingViewController: UIViewController {
             }
         }
     }
-    
-    
 }
 
-extension NowPlayingViewController: UICollectionViewDataSource {
+extension NowPlayingViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItems()
@@ -61,8 +59,28 @@ extension NowPlayingViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCell.identifier, for: indexPath) as! MovieCell
-        cell.titleLabel.text = viewModel.titleForCell(at: indexPath)
+        let movie = viewModel.movie(at: indexPath)
+        cell.setup(with: movie)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = (collectionView.frame.size.width - CGFloat(AppConstants.MovieCollection.HorizontalSpaceBetweenItems * 3)) / 2
+        return CGSize(width: width, height: width * CGFloat(AppConstants.MovieCollection.PosterImageRatio))
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return CGFloat(AppConstants.MovieCollection.VerticleSpaceBetweenItems)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return CGFloat(AppConstants.MovieCollection.HorizontalSpaceBetweenItems) / 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let leftMargin = CGFloat(AppConstants.MovieCollection.HorizontalSpaceBetweenItems)
+        let topMargin = CGFloat(AppConstants.MovieCollection.VerticleSpaceBetweenItems)
+        return UIEdgeInsetsMake(topMargin, leftMargin, topMargin, leftMargin)
     }
     
 }

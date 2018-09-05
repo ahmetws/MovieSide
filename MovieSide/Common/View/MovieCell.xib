@@ -19,26 +19,45 @@
                 <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ph1-aG-mul">
-                        <rect key="frame" x="8" y="222.5" width="134" height="19.5"/>
-                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
-                        <color key="textColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wHy-wW-Wqx">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QKi-dX-hC5">
+                        <rect key="frame" x="0.0" y="218.5" width="150" height="31.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ph1-aG-mul">
+                                <rect key="frame" x="4" y="4" width="142" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ph1-aG-mul" firstAttribute="top" secondItem="QKi-dX-hC5" secondAttribute="top" constant="4" id="425-EV-Rlb"/>
+                            <constraint firstItem="ph1-aG-mul" firstAttribute="leading" secondItem="QKi-dX-hC5" secondAttribute="leading" constant="4" id="SEZ-mL-lMa"/>
+                            <constraint firstAttribute="bottom" secondItem="ph1-aG-mul" secondAttribute="bottom" constant="4" id="lhq-Ku-0Q6"/>
+                            <constraint firstAttribute="trailing" secondItem="ph1-aG-mul" secondAttribute="trailing" constant="4" id="yeI-Bw-tqz"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="ph1-aG-mul" secondAttribute="trailing" constant="8" id="0X0-US-RNy"/>
-                <constraint firstAttribute="bottom" secondItem="ph1-aG-mul" secondAttribute="bottom" constant="8" id="Ns4-iF-Ca0"/>
-                <constraint firstItem="ph1-aG-mul" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="kwH-Se-Qq6"/>
+                <constraint firstItem="QKi-dX-hC5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5iC-2m-tLT"/>
+                <constraint firstItem="wHy-wW-Wqx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="OEw-Rr-JRs"/>
+                <constraint firstAttribute="bottom" secondItem="QKi-dX-hC5" secondAttribute="bottom" id="OWR-JU-INz"/>
+                <constraint firstAttribute="trailing" secondItem="QKi-dX-hC5" secondAttribute="trailing" id="ThX-IP-CTx"/>
+                <constraint firstAttribute="trailing" secondItem="wHy-wW-Wqx" secondAttribute="trailing" id="aZQ-Le-tQJ"/>
+                <constraint firstItem="wHy-wW-Wqx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="d27-Nw-Cv3"/>
+                <constraint firstAttribute="bottom" secondItem="wHy-wW-Wqx" secondAttribute="bottom" id="st3-9b-hCE"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="150" height="231"/>
             <connections>
+                <outlet property="posterImageView" destination="wHy-wW-Wqx" id="YKX-6X-FFd"/>
                 <outlet property="titleLabel" destination="ph1-aG-mul" id="3zL-ty-d85"/>
             </connections>
-            <point key="canvasLocation" x="84" y="144.5"/>
+            <point key="canvasLocation" x="84" y="144"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -15,4 +15,13 @@ struct NowPlayingResponse: Codable {
 struct Movie: Codable {
     var title: String
     var overview: String
+    var posterPath: String
+    
+    private enum CodingKeys : String, CodingKey {
+        case title, overview, posterPath = "poster_path"
+    }
+    
+    func posterUrl() -> String {
+        return "\(AppConstants.API.BaseImagePath)\(posterPath)"
+    }
 }

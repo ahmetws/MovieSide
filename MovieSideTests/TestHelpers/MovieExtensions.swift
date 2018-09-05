@@ -11,6 +11,6 @@ import Foundation
 
 extension Movie {
     init(_ title: String) {
-        self.init(title: title, overview: "")
+        self.init(title: title, overview: "", posterPath: "")
     }
 }

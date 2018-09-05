@@ -31,6 +31,7 @@
 		4BD062A5213FE9B000A6DC60 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD062A4213FE9B000A6DC60 /* AppConstants.swift */; };
 		4BD062A8213FED2200A6DC60 /* NowPlayingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD062A7213FED2200A6DC60 /* NowPlayingResponse.swift */; };
 		4BD062AB213FF07B00A6DC60 /* MovieExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD062AA213FF07B00A6DC60 /* MovieExtensions.swift */; };
+		4BD062AD2140219B00A6DC60 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD062AC2140219B00A6DC60 /* UIImageViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		4BD062A4213FE9B000A6DC60 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		4BD062A7213FED2200A6DC60 /* NowPlayingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingResponse.swift; sourceTree = "<group>"; };
 		4BD062AA213FF07B00A6DC60 /* MovieExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieExtensions.swift; sourceTree = "<group>"; };
+		4BD062AC2140219B00A6DC60 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +244,7 @@
 			children = (
 				4BD06285213F257000A6DC60 /* UICollectionViewCellExtensions.swift */,
 				4BD06287213FC3B900A6DC60 /* UICollectionViewExtensions.swift */,
+				4BD062AC2140219B00A6DC60 /* UIImageViewExtensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				4BD062A8213FED2200A6DC60 /* NowPlayingResponse.swift in Sources */,
 				4BD062A5213FE9B000A6DC60 /* AppConstants.swift in Sources */,
 				4BD0628E213FC75500A6DC60 /* MovieAPIProtocol.swift in Sources */,
+				4BD062AD2140219B00A6DC60 /* UIImageViewExtensions.swift in Sources */,
 				4BD062A0213FE91000A6DC60 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

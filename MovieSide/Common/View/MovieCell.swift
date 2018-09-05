@@ -9,6 +9,18 @@
 import UIKit
 
 class MovieCell: UICollectionViewCell {
-
+    @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        layer.cornerRadius = 8.0
+        clipsToBounds = true
+    }
+    
+    func setup(with movie: Movie) {
+        titleLabel.text = movie.title
+        posterImageView.setImage(with: movie.posterUrl())
+    }
 }
