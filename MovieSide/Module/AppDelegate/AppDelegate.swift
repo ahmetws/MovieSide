@@ -12,18 +12,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var appCoordinator: AppCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        let apiClient = MovieAPIClient(apiEngine: APIEngine())
-        let viewModel = NowPlayingViewModel(apiClient: apiClient)
-        let viewController = NowPlayingViewController(viewModel: viewModel)
-        let navigationController = UINavigationController(rootViewController: viewController)
-        
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = navigationController
-        self.window = window
-        window.makeKeyAndVisible()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        appCoordinator = AppCoordinator(window: window)
+        appCoordinator?.start()
         
         return true
     }
