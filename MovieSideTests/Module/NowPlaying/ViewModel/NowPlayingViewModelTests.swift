@@ -24,8 +24,20 @@ class NowPlayingViewModelTests: XCTestCase {
     
     func test_viewModel_getsDataFromAPI() {
         let sut = makeSUT()
-
         XCTAssertNotNil(sut.apiClient)
+        
+        var completionCalled = false
+        sut.getMovies {
+            completionCalled = true
+        }
+        
+        XCTAssertTrue(completionCalled)
+    }
+    
+    func test_viewModel_getsCorrectMovies() {
+        let sut = makeSUT([Movie("Spider Man"), Movie("Hulk")])
+        XCTAssertEqual(sut.movie(at: IndexPath(row: 0, section: 0)), sut.movies[0])
+        XCTAssertEqual(sut.movie(at: IndexPath(row: 1, section: 0)), sut.movies[1])
     }
     
     //MARK: - Helpers

@@ -12,10 +12,10 @@ class MovieDetailsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
 
-    var viewModel: MovieDetailsViewModel!
+    var viewModel: MovieDetailsViewModelProtocol!
     weak var delegate: ShowDetailsCoordinatorDelegate!
 
-    convenience init(viewModel: MovieDetailsViewModel) {
+    convenience init(viewModel: MovieDetailsViewModelProtocol) {
         self.init()
         self.viewModel = viewModel
     }
@@ -33,7 +33,12 @@ class MovieDetailsViewController: UIViewController {
     
     private func prepareUI() {
         title = viewModel.getTitle()
-        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+
+        prepareTableView()
+    }
+
+    private func prepareTableView() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
         tableView.tableFooterView = UIView()
@@ -94,7 +99,7 @@ extension MovieDetailsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let rowType: MovieDetailsViewModel.MovieDetailsRowType = viewModel.rowType(for: indexPath)
+        let rowType: MovieDetailsRowType = viewModel.rowType(for: indexPath)
         
         switch rowType {
         case .header(let movie):
@@ -111,7 +116,7 @@ extension MovieDetailsViewController: UITableViewDataSource {
 
 extension MovieDetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let rowType: MovieDetailsViewModel.MovieDetailsRowType = viewModel.rowType(for: indexPath)
+        let rowType: MovieDetailsRowType = viewModel.rowType(for: indexPath)
         
         switch rowType {
         case .collection(let movies, _):

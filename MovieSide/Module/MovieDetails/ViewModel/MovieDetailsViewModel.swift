@@ -8,19 +8,32 @@
 
 import Foundation
 
-class MovieDetailsViewModel {
+enum MovieDetailsRowType {
+    case header(movie: Movie)
+    case collection(movies: [Movie], collectionName: String)
+}
+
+protocol MovieDetailsViewModelProtocol {
+    var rows: [MovieDetailsRowType] { get set }
+
+    func getTitle() -> String
+    func numberOfRows() -> Int
+    func rowType(for indexPath: IndexPath) -> MovieDetailsRowType
+    func movieBelongsToCollection() -> Bool
+    func updateCollection()
     
-    enum MovieDetailsRowType {
-        case header(movie: Movie)
-        case collection(movies: [Movie], collectionName: String)
-    }
+    func getMovieDetails(completion: @escaping () -> Void)
+    func getCollectionDetails(completion: @escaping () -> Void)
+}
+
+class MovieDetailsViewModel: MovieDetailsViewModelProtocol {
     
+    var rows: [MovieDetailsRowType]
+
     private var apiClient: MovieAPIProtocol!
     private var currentMovie: Movie!
     private var movieDetails: MovieDetails?
     private var moviesInCollection: [Movie] = []
-
-    var rows: [MovieDetailsRowType]
     
     init(apiClient: MovieAPIProtocol, movie: Movie) {
         self.apiClient = apiClient

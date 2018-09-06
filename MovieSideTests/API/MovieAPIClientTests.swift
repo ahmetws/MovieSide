@@ -11,15 +11,43 @@ import XCTest
 
 class MovieAPIClientTests: XCTestCase {
     
-    func test_completionCall() {
+    func test_nowPlaying_completionCall() {
         var completionCalled = true
-        let sut = MovieAPIClient(apiEngine: APIEngine())
-        
+        let sut = makeSUT()
+
         sut.getNowPlaying { (_,_) in
             completionCalled = true
         }
         
         XCTAssertTrue(completionCalled)
+    }
+    
+    func test_getDetails_completionCall() {
+        var completionCalled = true
+        let sut = makeSUT()
+
+        sut.getDetails(for: Movie("")) { (_, _) in
+            completionCalled = true
+        }
+        
+        XCTAssertTrue(completionCalled)
+    }
+    
+    func test_getMoviesInCollection_completionCall() {
+        var completionCalled = true
+        let sut = makeSUT()
+        
+        sut.getMoviesInCollection(for: MovieDetails("")) { (_, _) in
+            completionCalled = true
+        }
+        
+        XCTAssertTrue(completionCalled)
+    }
+    
+    //MARK: - Helpers
+    
+    func makeSUT() -> MockAPIClient {
+        return MockAPIClient(movies: [], apiEngine: APIEngine())
     }
     
 }

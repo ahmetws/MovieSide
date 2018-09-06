@@ -13,7 +13,8 @@ class MockAPIClient: MovieAPIProtocol {
 
     var apiEngine: APIEngineProtocol
     var movies = [Movie]()
-    
+    var movieDetails: MovieDetails?
+
     init(movies: [Movie], apiEngine: APIEngineProtocol = APIEngine()) {
         self.movies = movies
         self.apiEngine = apiEngine
@@ -24,10 +25,10 @@ class MockAPIClient: MovieAPIProtocol {
     }
     
     func getMoviesInCollection(for movieDetails: MovieDetails, completion: @escaping MovieAPIProtocol.MoviesCompletionHandler) {
-        
+        completion(movies, nil)
     }
     
     func getDetails(for movie: Movie, completion: @escaping MovieAPIProtocol.MovieDetailsCompletionHandler) {
-        
+        completion(movieDetails, nil)
     }
 }

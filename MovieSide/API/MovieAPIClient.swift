@@ -69,7 +69,6 @@ class MovieAPIClient: MovieAPIProtocol {
         }
     }
     
-    
     func getMoviesInCollection(for movieDetails: MovieDetails, completion: @escaping MovieAPIProtocol.MoviesCompletionHandler) {
         
         guard let url = URL(string: APIEndPoints.moviesInCollection(movieDetails: movieDetails).buildUrl()) else {
