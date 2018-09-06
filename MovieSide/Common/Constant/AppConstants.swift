@@ -19,8 +19,25 @@ struct AppConstants {
     
     struct MovieCollection {
         static let PosterImageRatio: Float = 3.0/2.0
+        static let NumberOfColumnsInGrid: Float = 2
         static let HorizontalSpaceBetweenItems: Float = 8
         static let VerticleSpaceBetweenItems: Float = 8
+        static let CollectionSectionTitleHeight: Float = 40
+
+        static func getItemWidth(from totalWidth: Float) -> Float {
+            return (totalWidth - AppConstants.MovieCollection.HorizontalSpaceBetweenItems * (NumberOfColumnsInGrid + 1)) / NumberOfColumnsInGrid
+        }
+        
+        static func getItemHeight(from totalWidth: Float) -> Float {
+            let itemWidth = getItemWidth(from: totalWidth)
+            return itemWidth * PosterImageRatio
+        }
+        
+        static func collectionHeight(from totalWidth: Float, itemCount: Int) -> Float {
+            let itemHeight = AppConstants.MovieCollection.getItemHeight(from: totalWidth) + VerticleSpaceBetweenItems
+            let rowCount = Float(itemCount) / AppConstants.MovieCollection.NumberOfColumnsInGrid
+            return itemHeight * rowCount
+        }
     }
     
 }

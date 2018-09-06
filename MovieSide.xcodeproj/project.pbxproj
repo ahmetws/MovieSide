@@ -29,7 +29,7 @@
 		4BD062A0213FE91000A6DC60 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0629F213FE91000A6DC60 /* APIError.swift */; };
 		4BD062A2213FE95A00A6DC60 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD062A1213FE95A00A6DC60 /* APIEndpoints.swift */; };
 		4BD062A5213FE9B000A6DC60 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD062A4213FE9B000A6DC60 /* AppConstants.swift */; };
-		4BD062A8213FED2200A6DC60 /* NowPlayingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD062A7213FED2200A6DC60 /* NowPlayingResponse.swift */; };
+		4BD062A8213FED2200A6DC60 /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD062A7213FED2200A6DC60 /* MovieResponse.swift */; };
 		4BD062AB213FF07B00A6DC60 /* MovieExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD062AA213FF07B00A6DC60 /* MovieExtensions.swift */; };
 		4BD062AD2140219B00A6DC60 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD062AC2140219B00A6DC60 /* UIImageViewExtensions.swift */; };
 		4BD062B121403D3600A6DC60 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD062B021403D3600A6DC60 /* AppCoordinatorTests.swift */; };
@@ -88,7 +88,7 @@
 		4BD0629F213FE91000A6DC60 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		4BD062A1213FE95A00A6DC60 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		4BD062A4213FE9B000A6DC60 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
-		4BD062A7213FED2200A6DC60 /* NowPlayingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingResponse.swift; sourceTree = "<group>"; };
+		4BD062A7213FED2200A6DC60 /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
 		4BD062AA213FF07B00A6DC60 /* MovieExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieExtensions.swift; sourceTree = "<group>"; };
 		4BD062AC2140219B00A6DC60 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		4BD062B021403D3600A6DC60 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
@@ -349,7 +349,7 @@
 		4BD062A6213FECFB00A6DC60 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				4BD062A7213FED2200A6DC60 /* NowPlayingResponse.swift */,
+				4BD062A7213FED2200A6DC60 /* MovieResponse.swift */,
 				4BD062C6214067D300A6DC60 /* MovieDetail.swift */,
 				4BD062C821406DB100A6DC60 /* Movie.swift */,
 			);
@@ -571,7 +571,7 @@
 				4BD06286213F257000A6DC60 /* UICollectionViewCellExtensions.swift in Sources */,
 				4BD062C921406DB100A6DC60 /* Movie.swift in Sources */,
 				4BD062C421405CB700A6DC60 /* MovieDetailsViewController.swift in Sources */,
-				4BD062A8213FED2200A6DC60 /* NowPlayingResponse.swift in Sources */,
+				4BD062A8213FED2200A6DC60 /* MovieResponse.swift in Sources */,
 				4BD062A5213FE9B000A6DC60 /* AppConstants.swift in Sources */,
 				4BD0628E213FC75500A6DC60 /* MovieAPIProtocol.swift in Sources */,
 				4BD062AD2140219B00A6DC60 /* UIImageViewExtensions.swift in Sources */,

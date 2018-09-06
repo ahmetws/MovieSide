@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ShowDetailsCoordinatorDelegate: class {
+    func showDetails(of movie: Movie, from viewController: UIViewController)
+}
+
 class AppCoordinator: AppCoordinatorProtocol {
     
     var rootViewController: UINavigationController!
@@ -37,11 +41,12 @@ class AppCoordinator: AppCoordinatorProtocol {
     }
 }
 
-extension AppCoordinator: NowPlayingViewControllerDelegate {
+extension AppCoordinator: ShowDetailsCoordinatorDelegate {
     
     func showDetails(of movie: Movie, from viewController: UIViewController) {
         let viewModel = MovieDetailsViewModel(apiClient: apiClient, movie: movie)
         let movieDetailController = MovieDetailsViewController(viewModel: viewModel)
+        movieDetailController.delegate = self
         viewController.show(movieDetailController, sender: nil)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  MovieDetailsResponse.swift
+//  MovieDetails.swift
 //  MovieSide
 //
 //  Created by Ahmet Yalcinkaya on 5.09.2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MovieDetail: MovieProtocol {
+struct MovieDetails: MovieProtocol {
     var movieId: Int
     var title: String
     var overview: String
@@ -22,7 +22,8 @@ struct MovieDetail: MovieProtocol {
 
 struct BelongsToCollection: Codable {
     var collectionId: Int
+    var name: String
     
-    private enum CodingKeys: String, CodingKey { case collectionId = "id" }
+    private enum CodingKeys: String, CodingKey { case collectionId = "id", name }
 
 }

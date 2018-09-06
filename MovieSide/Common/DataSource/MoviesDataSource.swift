@@ -45,8 +45,9 @@ extension MoviesDataSource: UICollectionViewDelegate {
 extension MoviesDataSource: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width: CGFloat = (collectionView.frame.size.width - CGFloat(AppConstants.MovieCollection.HorizontalSpaceBetweenItems * 3)) / 2
-        return CGSize(width: width, height: width * CGFloat(AppConstants.MovieCollection.PosterImageRatio))
+        let width = AppConstants.MovieCollection.getItemWidth(from: Float(collectionView.frame.width))
+        let height = width * AppConstants.MovieCollection.PosterImageRatio
+        return CGSize(width: CGFloat(width), height: CGFloat(height))
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

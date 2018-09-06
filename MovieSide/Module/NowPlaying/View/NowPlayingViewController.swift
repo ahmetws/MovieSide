@@ -8,14 +8,10 @@
 
 import UIKit
 
-protocol NowPlayingViewControllerDelegate: class {
-    func showDetails(of movie: Movie, from viewController: UIViewController)
-}
-
 class NowPlayingViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    weak var delegate: NowPlayingViewControllerDelegate!
+    weak var delegate: ShowDetailsCoordinatorDelegate!
     
     private var dataSource: MoviesDataSource?
     
@@ -45,9 +41,7 @@ class NowPlayingViewController: UIViewController {
     }
     
     func reloadData() {
-        dataSource = viewModel.getDataSource { [weak self] (movie) in
-            self?.didSelect(movie: movie)
-        }
+        dataSource = viewModel.getDataSource(didSelectItemHandler: didSelectMovie())
         
         collectionView.dataSource = dataSource
         collectionView.delegate = dataSource
@@ -66,7 +60,11 @@ class NowPlayingViewController: UIViewController {
     
     //MARK: Selection
 
-    private func didSelect(movie: Movie) {
-        delegate.showDetails(of: movie, from: self)
+    private func didSelectMovie() -> MoviesDataSource.MovieSelectHandler {
+        return { [weak self] (movie) in
+            if let strongSelf = self {
+                strongSelf.delegate.showDetails(of: movie, from: strongSelf)
+            }
+        }
     }
 }

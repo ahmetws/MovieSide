@@ -1,5 +1,5 @@
 //
-//  NowPlayingResponse.swift
+//  MovieResponse.swift
 //  MovieSide
 //
 //  Created by Ahmet Yalcinkaya on 5.09.2018.
@@ -10,4 +10,8 @@ import Foundation
 
 struct NowPlayingResponse: Codable {
     var results: [Movie]
+}
+
+struct CollectionResponse: Codable {
+    var parts: [Movie]
 }
